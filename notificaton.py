@@ -1,11 +1,10 @@
 from plyer import notification 
-import time
+import time                        #for setting timer
 while True:
 
     notification.notify(
         title = "this will be the title. ",
         message = "type your message here. ",
-        # app_icon = "C:\Users\NSC\Downloads\clock.ico"
-        timeout = 4
+        timeout = 4                #how long the notification is supposed to be displayed
                        ) 
-    time.sleep(10)
+    time.sleep(10)                 #show the notification again after 10 seconds.
