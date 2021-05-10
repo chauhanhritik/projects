@@ -32,7 +32,26 @@ def cipher():                        #encoding the message
 
 
 def decipher():                   #decoding the message 
-    pass                          #will be uploaded soon
+    encode = input('Enter the message to be decoded : ')
+    key = int(input('Enter your key : '))   
+    newindex = 0
+    decode = ''
+    for x in range(len(encode)):
+        ch = encode[x] 
+        if ch == " ":
+            decode = decode + ch  #if blankspace, enter blankspace only
+        elif ch.isdigit():
+            decode + ch            #if digit, add same no
+        elif ch.isalpha():
+            ch_ascii = ord(ch.lower())      #for ascii value of c
+            oldindex = ord(ch) - ord("a")
+            newindex = ((oldindex - key)%26) + 97
+            new_ch = chr(newindex)
+            decode = decode + new_ch
+        else:
+            decode = decode +ch
+    print("The decoded string is :  " + decode)   
+
 
 print("You want to cipher(c) or decipher(d) a message...??")
 print(" Enter:  c/d : ", end = " ")
